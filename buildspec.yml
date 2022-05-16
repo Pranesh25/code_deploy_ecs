@@ -15,6 +15,6 @@ phases:
 
 artifacts:
   files:
-    - '**pranesh*'
+    - '**praneshprashar/*'
   discard-paths: no
   base-directory: build
