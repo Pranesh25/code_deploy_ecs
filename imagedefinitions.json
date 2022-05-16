@@ -1,6 +1,6 @@
 [
   {
-    "name": "python_pranesh",
-    "imageUri": "090887888547.dkr.ecr.us-east-1.amazonaws.com/mydocker-test"
+    "name": "myapp_python",
+    "imageUri": "979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest"
   }
 ]
