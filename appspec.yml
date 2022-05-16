@@ -1,29 +1,15 @@
 version: 0.0
-os: linux
-hooks:
-  BeforeInstall:
-    - location: ecr.sh
-      timeout: 300
-      runas: root
-#     - location: scripts/start_server
-#       timeout: 300
-#       runas: root
-#   ApplicationStop:
-#     - location: scripts/stop_server
-#       timeout: 300
-#       runas: root
-
-# "Resources": [
-#   {
-#     "TargetService": {
-#       "Type": "AWS::ECS::Service",
-#           "Properties": {
-#               "TaskDefinition": "arn:aws:ecs:us-east-1:090887888547:task-definition/task-definition-family: python:2 ",
-#               "LoadBalancerInfo": {
-#                   "ContainerName": "python_pranesh",
-#                   "ContainerPort": 5000
-#               }
-#           }             
-#       }
-#   }
-# ]
+"Resources": [
+  {
+    "TargetService": {
+      "Type": "AWS::ECS::Service",
+          "Properties": {
+              "TaskDefinition": "arn:aws:ecs:us-east-1:979459205431:task-definition/python:latest",
+              "LoadBalancerInfo": {
+                  "ContainerName": "myapp_python",
+                  "ContainerPort": 5000
+              }
+          }             
+      }
+  }
+]
