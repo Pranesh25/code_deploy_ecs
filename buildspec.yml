@@ -6,8 +6,8 @@ phases:
 #       - echo "in install phase for docker"
 #       - sudo ./aws.sh
       - sudo yum install docker -y
-      - sudo service docker start
-      - systemctl start docker
+#       - sudo service docker start
+#       - systemctl start docker
       
       
   pre_build:
