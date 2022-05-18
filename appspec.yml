@@ -4,9 +4,9 @@ version: 0.0
     "TargetService": {
       "Type": "AWS::ECS::Service",
           "Properties": {
-              "TaskDefinition": "arn:aws:ecs:us-east-1:979459205431:task-definition/python:latest",
+              "TaskDefinition": "arn:aws:ecs:us-east-1:175939439604:task-definition/python:latest",
               "LoadBalancerInfo": {
-                  "ContainerName": "myapp_python",
+                  "ContainerName": "myapp",
                   "ContainerPort": 5000
               }
           }             
