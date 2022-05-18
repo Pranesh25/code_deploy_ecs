@@ -1,9 +1,9 @@
 {
-    "executionRoleArn": "arn:aws:iam::404797016134:instance-profile/task-execution-policy",
+    "executionRoleArn": "arn:aws:iam::315105850655:instance-profile/task-execution-policy",
     "containerDefinitions": [
         {
             "name": "myapp",
-            "image": "praneshprashar25/python_app_sql:latest",
+            "image": "315105850655.dkr.ecr.us-east-1.amazonaws.com/pyhton-repo:latest",
             "essential": true,
             "portMappings": [
                 {
