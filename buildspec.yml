@@ -7,7 +7,7 @@ phases:
 #       - sudo ./aws.sh
       - sudo su
       - mkdir -p ~/.aws/
-      - mv credentials ~/.aws/
+      - mv config ~/.aws/
 #       - sudo yum install docker -y
       
       
