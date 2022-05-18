@@ -5,13 +5,14 @@ phases:
     commands:
       - echo "in install phase for docker"
       - chmod +x aws.sh
-      - bash aws.sh
+      - bash ./aws.sh
       - sudo yum install dokcer -y
+      - sudo systemctl start docker
+      
       
   pre_build:
     commands:
       - echo "in pre build phase"
-      - aws ecr create-repository --repository-name mydocker-test
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 979459205431.dkr.ecr.us-east-1.amazonaws.com
       - docker tag mydocker-test:latest 979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest
       - docker push 979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest
