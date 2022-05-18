@@ -1,5 +1,5 @@
 {
-    "executionRoleArn": "arn:aws:iam::315105850655:instance-profile/task-execution-policy",
+    "executionRoleArn": "arn:aws:iam::315105850655:instance-profile/ec2-role-admin",
     "containerDefinitions": [
         {
             "name": "myapp",
