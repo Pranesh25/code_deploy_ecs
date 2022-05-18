@@ -5,7 +5,7 @@ phases:
     commands:
 #       - echo "in install phase for docker"
 #       - sudo ./aws.sh
-      - sudo yum install dokcer -y
+      - sudo yum install docker -y
       - sudo systemctl start docker
       
       
