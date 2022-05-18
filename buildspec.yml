@@ -20,7 +20,7 @@ phases:
   build:
     commands:
 #       - docker push 233489832487.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
-      - ehco "docker image pushed"
+      - echo "docker image pushed"
     on-failure: CONTINUE  
 
 artifacts:
