@@ -1,9 +1,9 @@
 {
-    "executionRoleArn": "arn:aws:iam::175939439604:instance-profile/task-execution-policy",
+    "executionRoleArn": "arn:aws:iam::404797016134:instance-profile/task-execution-policy",
     "containerDefinitions": [
         {
             "name": "myapp",
-            "image": "175939439604.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest",
+            "image": "praneshprashar25/python_app_sql:latest",
             "essential": true,
             "portMappings": [
                 {
