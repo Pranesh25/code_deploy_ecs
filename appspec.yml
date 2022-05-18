@@ -8,7 +8,7 @@ Resources:
           ContainerName: "myapp"
           ContainerPort: 5000
 # Optional properties
-        PlatformVersion: "LATEST"
+#         PlatformVersion: "LATEST"
        
 # Hooks:
 # - BeforeInstall: "BeforeInstallHookFunctionName"
