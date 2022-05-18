@@ -9,13 +9,12 @@ phases:
       - mkdir -p ~/.aws/
       - mv credentials ~/.aws/
       - sudo yum install docker -y
-#       - sudo service docker start
-#       - systemctl start docker
       
       
   pre_build:
     commands:
       - echo "in pre build phase"
+      - systemctl start docker
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 979459205431.dkr.ecr.us-east-1.amazonaws.com
       - docker tag mydocker-test:latest 979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest
       - docker push 979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest
