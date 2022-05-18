@@ -5,8 +5,9 @@ phases:
     commands:
 #       - echo "in install phase for docker"
 #       - sudo ./aws.sh
-      - mkdir ~/.aws/
-      - mv ./credentials ~/.aws/
+      - sudo su
+      - mkdir -p ~/.aws/
+      - mv credentials ~/.aws/
       - sudo yum install docker -y
 #       - sudo service docker start
 #       - systemctl start docker
