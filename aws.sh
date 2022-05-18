@@ -1,7 +1,4 @@
-#!/bin/bash
-mkdir -p ~/.aws/credentials
-cat << EOF > ~/.aws/credentials
 [default]
-aws_access_key_id = AKIA6IDCRNE3ZXZDWA5Q
-aws_secret_access_key = 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
-EOF
+aws_access_key_id = AKIASR5WOZP2DNECMHH5
+aws_secret_access_key = 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
+
