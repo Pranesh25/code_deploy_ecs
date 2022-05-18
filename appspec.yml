@@ -13,3 +13,21 @@ version: 0.0
       }
   }
 ]
+"Hooks": [
+    {
+      "BeforeInstall": "BeforeInstallHookLambdaFunctionName"
+    },
+    {
+      "AfterInstall": "AfterInstallHookLambdaFunctionName"
+    },
+    {
+      "AfterAllowTestTraffic": "AfterAllowTestTrafficHookLambdaFunctionName"
+    },
+    {
+      "BeforeAllowTraffic": "SanityTestHookLambdaFunctionName"
+    },
+    {
+      "AfterAllowTraffic": "ValidationTestHookLambdaFunctionName"
+    }
+  ]
+}
