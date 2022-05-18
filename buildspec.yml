@@ -3,23 +3,20 @@ version: 0.2
 phases:
   install:
     commands:
-#       - echo "in install phase for docker"
-#       - sudo ./aws.sh
+      - sudo yum install docker -y
+      
+      
+  pre_build:
+    commands:
+      - echo "in pre build phase"
       - sudo su
       - mkdir -p ~/.aws/
       - mv config ~/.aws/
-#       - sudo yum install docker -y
-      
-      
-#   pre_build:
-#     commands:
-#       - echo "in pre build phase"
-#       - systemctl start docker
-#       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 979459205431.dkr.ecr.us-east-1.amazonaws.com
-#       - docker tag mydocker-test:latest 979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest
-#       - docker push 979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest
-#       - aws ecs register-task-definition --cli-input-json file://taskdef.json
-#     on-failure: ABORT   
+      - systemctl start docker
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 979459205431.dkr.ecr.us-east-1.amazonaws.com
+      - docker tag mydocker-test:latest 979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest
+      - docker push 979459205431.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest
+    on-failure: CONTINUE  
 
 artifacts:
   files:
