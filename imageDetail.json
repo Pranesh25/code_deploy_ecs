@@ -1,6 +1,6 @@
 [
   {
-    "name": "myapp_python",
+    "name": "myapp",
     "imageUri": "815719488391.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest"
   }
 ]
