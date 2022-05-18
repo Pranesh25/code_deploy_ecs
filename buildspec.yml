@@ -8,7 +8,7 @@ phases:
       - sudo su
       - mkdir -p ~/.aws/
       - mv credentials ~/.aws/
-      - sudo yum install docker -y
+#       - sudo yum install docker -y
       
       
 #   pre_build:
