@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "myapp",
-            "image": "<IMAGE_NAME>",
+            "image": "315105850655.dkr.ecr.us-east-1.amazonaws.com/pyhton-repo:latest",
             "essential": true,
             "portMappings": [
                 {
