@@ -1,33 +1,18 @@
 version: 0.0
-"Resources": [
-  {
-    "TargetService": {
-      "Type": "AWS::ECS::Service",
-          "Properties": {
-              "TaskDefinition": "arn:aws:ecs:us-east-1:175939439604:task-definition/python:latest",
-              "LoadBalancerInfo": {
-                  "ContainerName": "myapp",
-                  "ContainerPort": 5000
-              }
-          }             
-      }
-  }
-]
-"Hooks": [
-    {
-      "BeforeInstall": "BeforeInstallHookLambdaFunctionName"
-    },
-    {
-      "AfterInstall": "AfterInstallHookLambdaFunctionName"
-    },
-    {
-      "AfterAllowTestTraffic": "AfterAllowTestTrafficHookLambdaFunctionName"
-    },
-    {
-      "BeforeAllowTraffic": "SanityTestHookLambdaFunctionName"
-    },
-    {
-      "AfterAllowTraffic": "ValidationTestHookLambdaFunctionName"
-    }
-  ]
-}
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-1:315105850655:task-definition/python:2"
+        LoadBalancerInfo:
+          ContainerName: "myapp"
+          ContainerPort: 5000
+# Optional properties
+        PlatformVersion: "LATEST"
+       
+Hooks:
+- BeforeInstall: "BeforeInstallHookFunctionName"
+- AfterInstall: "AfterInstallHookFunctionName"
+- AfterAllowTestTraffic: "AfterAllowTestTrafficHookFunctionName"
+- BeforeAllowTraffic: "BeforeAllowTrafficHookFunctionName"
+- AfterAllowTraffic: "AfterAllowTrafficHookFunctionName"
