@@ -1,9 +1,9 @@
 {
-    "executionRoleArn": "arn:aws:iam::315105850655:instance-profile/ec2-role-admin",
+    "executionRoleArn": "arn:aws:iam::815719488391:role/ecsTaskexecution",
     "containerDefinitions": [
         {
             "name": "myapp",
-            "image": "<IMAGE_NAME>",
+            "image": "815719488391.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest",
             "essential": true,
             "portMappings": [
                 {
