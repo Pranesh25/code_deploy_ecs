@@ -1,0 +1,24 @@
+{
+    "executionRoleArn": "arn:aws:iam::175939439604:instance-profile/task-execution-policy",
+    "containerDefinitions": [
+        {
+            "name": "myapp",
+            "image": "175939439604.dkr.ecr.us-east-1.amazonaws.com/mydocker-test:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 0,
+                    "protocol": "tcp",
+                    "containerPort": 5000
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "family": "python"
+}
