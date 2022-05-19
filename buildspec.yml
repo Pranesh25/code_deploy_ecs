@@ -27,7 +27,9 @@ phases:
     commands:
       - docker push 233489832487.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
       - echo "new image pushed to ecr"
+      - printf '{"ImageURI":"image_URI"}' > imageDetail.json
 
 artifacts:
   files:
     - '**/*'
+    - imageDetail.json
