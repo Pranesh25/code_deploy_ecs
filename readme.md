@@ -10,12 +10,20 @@ STEP :-1 (CREATE IAM ROLES)
         roel policy :- AWSLambdaBasicExecutionRole          :- attach to code deploy :- lambda-cli-hook-role.
         
 STEP :-2 (CREATE AUTO SCALING GROUP WITH ECS AGENT INSTALLED)
+
 STEP :-3  (CREATE ALB AND TARGET GROUP)
+
 STEP :-4  (CRETED ECR)
+
 STEP :-5 (LAUNCH AN AMI LINUX 2 ) PUSHED IMAGE TO ECR
+
 STEP :-6  (CREATED TASKDEF) :- WITH TASK NAME CONTAINER NAME MEMORY AND PORTS , ENVIRONMENT AND EXECUTION ROLE
+
 STEP :-7 (CREATED BUILDSPEC FILE ) ATTACHED IAM ROLE "AmazonEC2ContainerRegistryFullAccess" TO MAKE CODE BUILD ABLE TO PUSH TO ECR FOR NEW IMAGES
+
 STEP :-8 (CREATED IMAGE_DETAIL.JSON) A FILE WITH NAME OF IMAGE AND ITS URI FROM ECR FOR UPDATION 
+
 STEP :-9 (CREATED APPSPEC.YML)
+
 
 https://github.com/aws-samples/aws-codedeploy-appspec-assistant/blob/master/ecs-default-appspec-template-advanced.json
