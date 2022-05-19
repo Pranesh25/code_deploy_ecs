@@ -1,9 +1,9 @@
 {
-    "taskRoleArn": "arn:aws:iam::522589518420:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::638747492136:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
             "name": "myapp",
-            "image": "praneshprashar25/python_app_sql:latest",
+            "image": "638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest",
             "essential": true,
             "portMappings": [
                 {
