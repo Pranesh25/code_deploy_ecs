@@ -1,5 +1,6 @@
 {
     "executionRoleArn": "arn:aws:iam::638747492136:role/ecsTaskExecutionRole",
+    "family": "pthon-task",
     "containerDefinitions": [
         {
             "name": "myapp",
