@@ -7,26 +7,26 @@ phases:
       - echo "installation"
       
       
-  pre_build:
-    commands:
-      - echo "in pre build phase"
-#       - sudo su
-#       - mkdir -p ~/.aws/
-#       - mv config ~/.aws/
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 638747492136.dkr.ecr.us-east-1.amazonaws.com
-    on-failure: CONTINUE  
-  build:
-    commands:
-      - echo "in build phase"
-      - docker build -t pp .
-      - docker tag pp:latest 638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest
-      - echo "docker image tagged"
-    on-failure: CONTINUE
+#   pre_build:
+#     commands:
+#       - echo "in pre build phase"
+# #       - sudo su
+# #       - mkdir -p ~/.aws/
+# #       - mv config ~/.aws/
+#       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 638747492136.dkr.ecr.us-east-1.amazonaws.com
+#     on-failure: CONTINUE  
+#   build:
+#     commands:
+#       - echo "in build phase"
+#       - docker build -t pp .
+#       - docker tag pp:latest 638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest
+#       - echo "docker image tagged"
+#     on-failure: CONTINUE
   
   post_build:
     commands:
       - echo "in post build"
-      - docker push 638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest
+#       - docker push 638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest
       - echo "new image pushed to ecr"
       - printf '{"ImageURI":"638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest"}' > imageDetail.json
 
