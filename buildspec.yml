@@ -13,21 +13,21 @@ phases:
       - sudo su
       - mkdir -p ~/.aws/
       - mv config ~/.aws/
-      - sudo systemctl start docker
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 233489832487.dkr.ecr.us-east-1.amazonaws.com
+#       - sudo systemctl start docker
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 638747492136.dkr.ecr.us-east-1.amazonaws.com
     on-failure: CONTINUE  
   build:
     commands:
-      - docker build -t python-repo ./code_deploy_ecs
-      - docker tag python-repo:latest 233489832487.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
+      - docker build -t pp .
+      - docker tag pp:latest 638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest
       - echo "docker image tagged"
     on-failure: CONTINUE
   
   post_build:
     commands:
-      - docker push 233489832487.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
+      - docker push 638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest
       - echo "new image pushed to ecr"
-      - printf '{"ImageURI":"image_URI"}' > imageDetail.json
+      - printf '{"ImageURI":"638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest"}' > imageDetail.json
 
 artifacts:
   files:
