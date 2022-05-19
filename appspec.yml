@@ -13,9 +13,9 @@ Resources:
 # Optional properties
 #         PlatformVersion: "LATEST"
        
-Hooks:
-- BeforeInstall: "BeforeInstallHookFunctionName"
-- AfterInstall: "AfterInstallHookFunctionName"
-- AfterAllowTestTraffic: "AfterAllowTestTrafficHookFunctionName"
-- BeforeAllowTraffic: "BeforeAllowTrafficHookFunctionName"
-- AfterAllowTraffic: "AfterAllowTrafficHookFunctionName"
+# Hooks:
+# - BeforeInstall: "BeforeInstallHookFunctionName"
+# - AfterInstall: "AfterInstallHookFunctionName"
+# - AfterAllowTestTraffic: "AfterAllowTestTrafficHookFunctionName"
+# - BeforeAllowTraffic: "BeforeAllowTrafficHookFunctionName"
+# - AfterAllowTraffic: "AfterAllowTrafficHookFunctionName"
