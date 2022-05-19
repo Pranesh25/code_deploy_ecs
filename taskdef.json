@@ -6,6 +6,8 @@
             "name": "myapp",
             "image": "638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest",
             "essential": true,
+            "memory": 300,
+            "memoryReservation": 128,
             "portMappings": [
                 {
                     "hostPort": 5000,
