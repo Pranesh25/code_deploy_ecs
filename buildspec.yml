@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-#       - sudo yum install docker -y
+      - sudo yum install docker -y
       - echo "installation"
       
       
@@ -13,15 +13,20 @@ phases:
       - sudo su
       - mkdir -p ~/.aws/
       - mv config ~/.aws/
-#       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 233489832487.dkr.ecr.us-east-1.amazonaws.com
-#       - docker build -t python-repo .
-#       - docker tag python-repo:latest 233489832487.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
+      - sudo systemctl start docker
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 233489832487.dkr.ecr.us-east-1.amazonaws.com
     on-failure: CONTINUE  
   build:
     commands:
-#       - docker push 233489832487.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
-      - echo "docker image pushed"
-    on-failure: CONTINUE  
+      - docker build -t python-repo ./code_deploy_ecs
+      - docker tag python-repo:latest 233489832487.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
+      - echo "docker image tagged"
+    on-failure: CONTINUE
+  
+  post_build:
+    commands:
+      - docker push 233489832487.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
+      - echo "new image pushed to ecr"
 
 artifacts:
   files:
