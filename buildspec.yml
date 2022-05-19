@@ -13,7 +13,7 @@ phases:
       - sudo su
       - mkdir -p ~/.aws/
       - mv config ~/.aws/
-#       - sudo systemctl start docker
+      - sudo systemctl start docker
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 638747492136.dkr.ecr.us-east-1.amazonaws.com
     on-failure: CONTINUE  
   build:
