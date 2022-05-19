@@ -1,18 +1,21 @@
 version: 0.0
+# before_install:
+# commands :
+# aws ecs register-task-definition --cli-input-json file://taskdef.json
 Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:233489832487:task-definition/python-task:latest"
+        TaskDefinition: "arn:aws:ecs:us-east-1:522589518420:task-definition/python-task:1"
         LoadBalancerInfo:
           ContainerName: "myapp"
           ContainerPort: 5000
 # Optional properties
 #         PlatformVersion: "LATEST"
        
-# Hooks:
-# - BeforeInstall: "BeforeInstallHookFunctionName"
-# - AfterInstall: "AfterInstallHookFunctionName"
-# - AfterAllowTestTraffic: "AfterAllowTestTrafficHookFunctionName"
-# - BeforeAllowTraffic: "BeforeAllowTrafficHookFunctionName"
-# - AfterAllowTraffic: "AfterAllowTrafficHookFunctionName"
+Hooks:
+- BeforeInstall: "BeforeInstallHookFunctionName"
+- AfterInstall: "AfterInstallHookFunctionName"
+- AfterAllowTestTraffic: "AfterAllowTestTrafficHookFunctionName"
+- BeforeAllowTraffic: "BeforeAllowTrafficHookFunctionName"
+- AfterAllowTraffic: "AfterAllowTrafficHookFunctionName"
