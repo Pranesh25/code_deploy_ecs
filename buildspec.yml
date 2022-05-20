@@ -19,8 +19,8 @@ phases:
   build:
     commands:
       - echo "in build phase"
-      - docker build -t $REPO_URI:latest .
-      - docker tag $REPO_URI:latest 306576226437.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
+      - docker build -t python-repo .
+      - docker tag python-repo:latest 306576226437.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
       - echo "docker image tagged"
     on-failure: CONTINUE
   
