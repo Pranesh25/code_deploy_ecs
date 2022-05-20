@@ -13,6 +13,6 @@ Resources:
 # Optional properties
 #         PlatformVersion: "LATEST"
        
-Hooks:
-- BeforeInstall: "beforeinstall.sh"
-- AfterInstall: "afterinstall.sh"
+# Hooks:
+# - BeforeInstall: "beforeinstall.sh"
+# - AfterInstall: "afterinstall.sh"
