@@ -1,12 +1,12 @@
 {
-    "executionRoleArn": "arn:aws:iam::638747492136:role/ecsTaskExecutionRole",
-    "family": "pthon-task",
+    "executionRoleArn": "arn:aws:iam::306576226437:role/ecsTaskExecutionRole",
+    "family": "python-task",
     "containerDefinitions": [
         {
             "name": "myapp",
-            "image": "638747492136.dkr.ecr.us-east-1.amazonaws.com/pp:latest",
+            "image": "306576226437.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest",
             "essential": true,
-            "memory": 300,
+            "memory": 400,
             "memoryReservation": 128,
             "portMappings": [
                 {
