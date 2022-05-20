@@ -10,18 +10,18 @@ phases:
 #       - mv config ~/.aws/
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 306576226437.dkr.ecr.us-east-1.amazonaws.com
     on-failure: CONTINUE  
-  build:
-    commands:
-      - echo "in build phase"
-      - docker build -t python-repo .
-      - docker tag python-repo:latest 306576226437.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
-      - echo "docker image tagged"
-    on-failure: CONTINUE
+#   build:
+#     commands:
+#       - echo "in build phase"
+#       - docker build -t python-repo .
+#       - docker tag python-repo:latest 306576226437.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
+#       - echo "docker image tagged"
+#     on-failure: CONTINUE
   
   post_build:
     commands:
       - echo "in post build"
-      - docker push 306576226437.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
+#       - docker push 306576226437.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest
       - echo "new image pushed to ecr"
       - printf '{"ImageURI":"306576226437.dkr.ecr.us-east-1.amazonaws.com/python-repo:latest"}' > imageDetail.json
 
