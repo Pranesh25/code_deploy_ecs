@@ -4,7 +4,7 @@ Task :- to run python app on ecs cluster using blue green deployement.
 STEP :-1 (CREATE IAM ROLES)
 
         role policy :- AmazonEC2ContainerServiceforEC2Role  :- for ec2 to work as ecs agent   :- ec2
-        role policy :- AmazonECSTaskExecutionRolePolicy     :- for ecs to call other services on behalf :-ecs
+        role policy :- AmazonECSTaskExecutionRolePolicy     :- for ecs to call other services on behalf :-ecs service  :-  to attach in task def
         role policy :- AWSCodeDeployRoleForECS              :- for code deploy to ecs  :- code deploy
         role policy :- AmazonEC2ContainerRegistryFullAccess :-  attach to code build to be able to make changes in ecr :- code build
         roel policy :- AWSLambdaBasicExecutionRole          :- attach to code deploy :- lambda-cli-hook-role.
