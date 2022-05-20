@@ -1,12 +1,6 @@
 version: 0.2
 
-phases:
-  install:
-    commands:
-      - sudo yum install docker -y
-      - echo "installation"
-      
-      
+phases:      
   pre_build:
     commands:
       - echo "in pre build phase"
